@@ -6,3 +6,7 @@ var server = express();
 server.use(express.static('public'));
 // Sets whatever environment var port, or 8080 if nothing's available
 const PORT = process.env.PORT || 8080;
+
+// For Express server to handle data parsing
+server.use(express.urlencoded({ extended: true }));
+server.use(express.json());
