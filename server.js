@@ -10,3 +10,7 @@ const PORT = process.env.PORT || 8080;
 // For Express server to handle data parsing
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
+
+// Router API & HTML map
+require("./public/assets/routes/apiRoutes")(server);
+require("./public/assets/routes/htmlRoutes")(server);
