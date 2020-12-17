@@ -14,3 +14,8 @@ server.use(express.json());
 // Router API & HTML map
 require("./public/assets/routes/apiRoutes")(server);
 require("./public/assets/routes/htmlRoutes")(server);
+
+// Listener code to start server
+server.listen(PORT, function() {
+    console.log("App listening on PORT: " + PORT);
+});
