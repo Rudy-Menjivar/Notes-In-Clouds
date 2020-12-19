@@ -10,3 +10,11 @@ class NotesDB {
     this.database = [];
     }
   }
+
+module.exports = function(server) {
+    // Retrieve notes so they render in text area div
+    server.get("/api/notes", function(req, res) {
+        res.sendFile(path.join(__dirname, dbLink));
+    });
+
+};
