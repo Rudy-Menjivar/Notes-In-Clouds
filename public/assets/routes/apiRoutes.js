@@ -46,6 +46,8 @@ module.exports = function(server) {
         otherNotes.id = newID.toString();
         newID++;
       };
-
+      // Write changes to db file and respond with json data
+      fs.writeFileSync("./db/db.json", JSON.stringify(this.database));
+      res.json(this.database);
     });
 };
