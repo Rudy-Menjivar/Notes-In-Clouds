@@ -31,5 +31,6 @@ module.exports = function(server) {
 
     // Delete by id req, res
     server.delete("/api/notes/:id", function(req, res) {
+      this.database = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
     });
 };
