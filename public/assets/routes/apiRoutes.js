@@ -41,5 +41,11 @@ module.exports = function(server) {
       });
       console.log(`Deleted note with ID#: ${selectedNote}`);
 
+      // Rewrite ids after any deletion by incrementing them by 1
+      for(otherNotes of this.database) {
+        otherNotes.id = newID.toString();
+        newID++;
+      };
+
     });
 };
