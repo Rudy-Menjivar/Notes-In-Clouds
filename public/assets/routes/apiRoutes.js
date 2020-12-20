@@ -23,6 +23,7 @@ module.exports = function(server) {
         let newNote = req.body;
         let noteID = (this.database.length+1).toString();
         newNote.id = noteID;
+        this.database.push(newNote)
     });
 
 };
