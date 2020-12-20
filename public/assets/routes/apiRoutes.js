@@ -29,4 +29,7 @@ module.exports = function(server) {
         console.log(`New note titled "${newNote.title}" has been saved & added to database under ID# ${newNote.id}`);
     });
 
+    // Delete by id req, res
+    server.delete("/api/notes/:id", function(req, res) {
+    });
 };
