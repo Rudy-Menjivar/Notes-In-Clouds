@@ -39,6 +39,7 @@ module.exports = function(server) {
       this.database = this.database.filter(otherNotes => {
         return otherNotes.id != selectedNote;
       });
+      console.log(`Deleted note with ID#: ${selectedNote}`);
 
     });
 };
