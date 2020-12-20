@@ -4,7 +4,8 @@
 ## Description
     
 This Note saving application can be used to save and delete notes from a JSON file, all from the cloud! The backend code was built to connect with the frontend starter code. HTML routes are setup to return the index and notes files, while dynamically updating its database.
-    
+
+<img src="./public/assets/demo.gif" width="100%" height="100%" alt="Demo of the best note taking web application"> 
 
 ## Content
 
