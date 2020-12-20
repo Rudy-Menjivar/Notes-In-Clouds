@@ -17,4 +17,10 @@ module.exports = function(server) {
         res.sendFile(path.join(__dirname, dbLink));
     });
 
+    // Post request/response function to readFileSync notes db
+    server.post("/api/notes", function(req, res) {
+        this.database = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+
+    });
+
 };
