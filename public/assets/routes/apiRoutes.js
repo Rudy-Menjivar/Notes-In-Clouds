@@ -25,6 +25,8 @@ module.exports = function(server) {
         newNote.id = noteID;
         this.database.push(newNote)
         fs.writeFileSync("./db/db.json", JSON.stringify(this.database));
+        res.json(this.database);
+        console.log(`New note titled "${newNote.title}" has been saved & added to database under ID# ${newNote.id}`);
     });
 
 };
