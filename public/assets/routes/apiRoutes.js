@@ -17,10 +17,12 @@ module.exports = function(server) {
         res.sendFile(path.join(__dirname, dbLink));
     });
 
-    // Post request/response function to readFileSync notes db
+    // Post newNote with new ID # based on the total number of notes, starting at 1
     server.post("/api/notes", function(req, res) {
         this.database = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
         let newNote = req.body;
+        let noteID = (this.database.length+1).toString();
+        newNote.id = noteID;
     });
 
 };
