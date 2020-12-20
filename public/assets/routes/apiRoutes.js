@@ -34,5 +34,11 @@ module.exports = function(server) {
       this.database = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
       let selectedNote = req.params.id;
       let newID = 1
+
+      // Return notes that weren't selected with filter function
+      this.database = this.database.filter(otherNotes => {
+        return otherNotes.id != selectedNote;
+      });
+
     });
 };
