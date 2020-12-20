@@ -24,6 +24,7 @@ module.exports = function(server) {
         let noteID = (this.database.length+1).toString();
         newNote.id = noteID;
         this.database.push(newNote)
+        fs.writeFileSync("./db/db.json", JSON.stringify(this.database));
     });
 
 };
